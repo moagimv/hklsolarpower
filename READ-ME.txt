@@ -1,0 +1,11 @@
+  =>  Template Name    : HKL Solar Power Website Template
+
+  =>  Template Link    : https://www.hklsolarpower.co.za
+
+  =>  Template License : https://www.mmstech.co.za (or read the LICENSE.txt file)
+
+  =>  Template Author  : MMS Technologies
+
+  =>  Author Website   : https://www.mmstech.co.za
+
+  =>  About MMS Technologies : MMS Technologies is one of the top creators and publishers of HTML templates, HTML landing pages, HTML email templates and HTML snippets in the world. Read more at ( https://www.mmstech.co.za )
