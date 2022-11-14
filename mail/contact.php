@@ -32,8 +32,8 @@ try {
   $mail->isSMTP(); // Set mailer to use SMTP
   $mail->Host = 'mail.hklsolarpower.co.za'; // Specify main and backup SMTP servers
   $mail->SMTPAuth = true; // Enable SMTP authentication
-  $mail->Username = $to; // SMTP username
-  $mail->Password = 'secret'; // SMTP password
+  $mail->Username = $to; // SMTP username (The email to be used)
+  $mail->Password = 'secret'; // SMTP password (The password of the email to be used)
   $mail->SMTPSecure = 'tls'; // Enable TLS encryption, [ICODE]ssl[/ICODE] also accepted
   $mail->Port = 468; // TCP port to connect to
  
@@ -41,7 +41,7 @@ try {
   $mail->setFrom($to, 'Mailer');
   //$mail->addAddress('recipient1@example.net', 'Joe User'); // Add a recipient
   //$mail->addAddress('recipient2@example.com'); // Name is optional
-  $mail->addReplyTo($mail, 'HKL Solar Power Information');
+  $mail->addReplyTo($email, $name);
   //$mail->addCC('cc@example.com');
   //$mail->addBCC('bcc@example.com');
  
@@ -55,11 +55,16 @@ try {
   $mail->Body = $message;
   $mail->AltBody = $message;
 
+  //$mail->send();
+
   if(!$mail->send()){
     http_response_code(500);
   }
+  //echo 'Message has been sent';
+
 } catch (Exception $e) {
   http_response_code(500);
+  //echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}"
 }
 
 /*$to = "info@hklsolarpower.co.za"; // Change this email to your //
